@@ -1,17 +1,21 @@
-// Підключення модуля readline
 const readline = require('readline');
 
-// Створення інтерфейсу readline
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-// Задання питання користувачеві
-rl.question('Як тебе звати? ', (name) => {
-    // Виведення вітання
+const question = (prompt) => new Promise((resolve) => rl.question(prompt, resolve));
+
+// Асинхронна функція для використання name поза rl.question
+const main = async () => {
+    const name = await question('Як тебе звати? ');
     console.log(`Привіт, ${name}!`);
 
-    // Закриття інтерфейсу readline
+    // Тепер ви можете використовувати name тут або в будь-яких інших місцях після виклику main()
+
+    // Не забудьте закрити інтерфейс readline
     rl.close();
-});
+};
+
+main(); // Виклик асинхронної функції
