@@ -27,5 +27,5 @@ function addNonMultipleNumbers(min_number= 1, max_number = 100, divisor = 2) {
 }
 
 let result = addNonMultipleNumbers(max_number, min_number, divisor);
-if !(isNaN(result))
+if (!(isNaN(result)))
     console.log("Cума чисел від " + min_number +" до " + max_number + " включно, які не кратні " + divisor + " дорівнює " + result);
