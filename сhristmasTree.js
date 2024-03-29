@@ -4,19 +4,19 @@ let drawingSymbol = "*";
 function drawChristmasTree (heightOftriangle = 5, drawingSymbol = "*") {
     if (isNaN(heightOftriangle) || (!heightOftriangle)) {
         console.log("Висота трикутника повинна бути числом.");
-        console.log("Для малювання трикутника буде використано висота за умовчанням - 5.");
+        console.log("Для малювання трикутника буде використано висота за умовчанням.");
         drawChristmasTree(undefined, drawingSymbol);
         return;
     }
     if (heightOftriangle < 2) {
         console.log("Висота трикутника повинна бути більше 1, інакше кінцева фігура не буде схожа на трикутник.");
-        console.log("Для малювання трикутника буде використано висота за умовчанням - 5.");
+        console.log("Для малювання трикутника буде використано висота за умовчанням.");
         drawChristmasTree(undefined, drawingSymbol);
         return;
     }
     if (!drawingSymbol) {
         console.log("Не можна намалювати трукутник, використовуючи замість символа для малювання порожній рядок.");
-        console.log("Для малювання трикутника буде використано символ за умовчанням - * (зірочка).");
+        console.log("Для малювання трикутника буде використано символ за умовчанням.");
         drawChristmasTree(heightOftriangle)
         return;
     }
