@@ -33,7 +33,7 @@ const main = async () => {
                 age = "";
             }
             else {
-                let n = Math.abs(age) % 100;
+                let n = age % 100;
                 let n1 = n % 10;
 
                 if (n > 10 && n < 20) YearWord = ' років';
