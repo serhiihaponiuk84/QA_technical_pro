@@ -25,11 +25,13 @@ const main = async () => {
     const age = await question("Hi, how old are you?");
 
     let YearWord;
-    let n = Math.abs(age) % 100;
-    let n1 = n % 10;
 
     if (isNaN(age)) YearWord = 'не є роком.'
         else {
+
+            let n = Math.abs(age) % 100;
+            let n1 = n % 10;
+
             if (n > 10 && n < 20) YearWord = 'років';
             else {
                 if (n1 > 1 && n1 < 5) YearWord = 'роки';
