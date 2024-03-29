@@ -26,7 +26,7 @@ const main = async () => {
 
     let YearWord;
 
-    if (isNaN(age)) YearWord = 'не є роком.'
+    if (isNaN(age) || (!age)) YearWord = 'не є роком.'
         else {
 
             let n = Math.abs(age) % 100;
