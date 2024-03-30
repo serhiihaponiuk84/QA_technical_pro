@@ -20,9 +20,12 @@ function drawChristmasTree (heightOftriangle = 5, drawingSymbol = "*") {
         drawChristmasTree(heightOftriangle)
         return;
     }
-    if (String(drawingSymbol).length !== 1) {
+    if (typeof drawingSymbol !== "string") {
+        drawingSymbol = String(drawingSymbol)
+    }
+    if (drawingSymbol.length !== 1) {
         console.log("Довжина символа для малювання буде скорочена до одного (першого) символа введеного рядка.");
-        drawingSymbol = String(drawingSymbol)[0];
+        drawingSymbol = drawingSymbol[0];
     }
 
     let triangleString = "";
