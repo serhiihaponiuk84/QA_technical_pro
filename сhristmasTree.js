@@ -33,11 +33,14 @@ function drawChristmasTree (heightOftriangle = 5, drawingSymbol = "*") {
     }
     console.log();
 }
-
-drawChristmasTree(heightOftriangle, drawingSymbol)
-drawChristmasTree();
-drawChristmasTree(-1, "+++");
-drawChristmasTree(3, "q");
-drawChristmasTree(3, "");
-drawChristmasTree(0, "");
-drawChristmasTree(undefined, 505);
+try {
+    drawChristmasTree(heightOftriangle, drawingSymbol)
+    drawChristmasTree();
+    drawChristmasTree(-1, "+++");
+    drawChristmasTree(3, "q");
+    drawChristmasTree(3, "");
+    drawChristmasTree(0, "");
+    drawChristmasTree(undefined, 505);
+} catch (error) {
+    onsole.error("Input error: ", error.message);
+}
