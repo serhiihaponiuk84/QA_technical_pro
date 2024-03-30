@@ -2,6 +2,7 @@ let heightOftriangle = 5;
 let drawingSymbol = "*";
 
 function drawChristmasTree (heightOftriangle = 5, drawingSymbol = "*") {
+//    if (isNaN(heightOftriangle) || (!heightOftriangle)) {
     if (isNaN(heightOftriangle) || (heightOftriangle < 2)) {
         console.log("Висота трикутника повинна бути числом більше 1, інакше кінцева фігура не буде схожа на трикутник.");
         console.log("Для малювання трикутника буде використано висота за умовчанням.");
