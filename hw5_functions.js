@@ -7,9 +7,20 @@
     min(1, 1) == 1 */
 
 let min = (a, b) => {
-    if (isNaN(a) || isNaN(b) || (!a) || (!b)) return NaN;
-    if (a < b) return a
-    else return b
+    if (typeof a != 'number'){
+        a = Number(a);
+    }
+    if (typeof b != 'number'){
+        b = Number(b);
+    }
+    if (isNaN(a) || isNaN(b)) {
+        return NaN;
+    }
+    if (a < b) {
+        return a;
+    } else {
+        return b;
+    }
 }
 
 console.log(min(2, 5));
@@ -24,7 +35,12 @@ console.log(min(1, 1));
     @ @ @ https://www.tiktok.com/@devslopes/video/7332200215258238251 @ @ @ */
 
 let chooseLunch = (lunch) => {
-    if (isNaN(lunch) || (!lunch)) return NaN;
+    if (typeof luncha != 'number'){
+        lunch = Number(lunch);
+    }
+    if (isNaN(lunch)) {
+        return NaN;
+    }
     switch (lunch) {
         case 1: return "pizza";
         case 2: return "spagetti";
@@ -34,8 +50,11 @@ let chooseLunch = (lunch) => {
 }
 
 result = chooseLunch(1);
-if (result) console.log("My lunch for today is " + result + ".");
-else console.log("Input error!")
+if (result) {
+    console.log("My lunch for today is " + result + ".");
+} else {
+    console.log("Input error!")
+}
 
 /* Task 3
     Callback
@@ -45,13 +64,22 @@ else console.log("Input error!")
     if function2 returns "THIS IS THE RESULT OF CALLBACK FUNCTION"
     than function1 should return "The result = THIS IS THE RESULT OF CALLBACK FUNCTION" */
 
+// К сожалению, у меня не хватает практического опыта и знаний, чтобы написать что-то свое полезное
+// а не просто содрать из интернета
+
 /* Task 4
     Create a function task13Func which returns word google with given numbers of "o" symbols
     Example,
     funcName(7) // => gooooooogle */
 
 function task13Func(count) {
-   if (isNaN(count) || (!count) || (count < 2)) return NaN; // Invalid input
+    if (typeof count != 'number'){
+        count = Number(count);
+    }
+    if (isNaN(count) || count < 2) {
+        return NaN;
+    } // Invalid input
+
     return 'g' + 'o'.repeat(count) + 'gle';
 }
 
