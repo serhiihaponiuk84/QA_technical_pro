@@ -5,14 +5,23 @@ let max_number = 100;
 function addNonMultipleNumbers(min_number= 1, max_number = 100, divisor = 2) {
     let temp_number;
     let sum = 0;
+    if (typeof min_number != 'number') {
+        min_number = Number(min_number);
+    }
+    if (typeof max_number != 'number') {
+        max_number = Number(max_number);
+    }
+    if (typeof divisor != 'number') {
+        divisor = Number(divisor);
+    }
     if (isNaN(min_number) || isNaN(max_number) || isNaN(divisor)) {
         console.log("Программа обробляє лише числа.");
         return NaN;
-    };
-    if (divisor == 0) {
+    }
+    if (divisor === 0) {
         console.log("Не можна ділити на 0!");
         return NaN;
-    };
+    }
     if (min_number > max_number) {
         console.log("Діапазон не може починатися з " + min_number + " та закінчуватися " + max_number + ".");
         temp_number = min_number;
