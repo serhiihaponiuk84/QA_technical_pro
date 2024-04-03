@@ -41,8 +41,8 @@ function checkProbabilityTheory(count = 1) {
     console.log(`Кількість згенерованих чисел: ${totalNumbers}.\n` +
         `Парних чисел: ${pairedNumbers}.\n` +
         `Не парних чисел: ${nonPairedNumbers}.\n` +
-        `Відсоток парних чисел:${percentPaired}%,` +
-        `не парних:${percentNonPaired}%.\n`)
+        `Відсоток парних чисел: ${percentPaired}%, ` +
+        `не парних: ${percentNonPaired}%.\n`)
 }
 
 
