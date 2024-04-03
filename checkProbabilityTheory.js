@@ -4,10 +4,10 @@ const count = 11;
 
 function getRandomArbitrary(min = minNumber, max = maxNumber) {
     if (typeof min !== 'number') {
-        min = Number(min);
+        min = Number.parseInt(min);
     }
     if (typeof max !== 'number') {
-        max = Number(max);
+        max = Number.parseInt(max);
     }
     if (isNaN(min) || isNaN(max)) {
         throw new Error("Error: Ошибка входных данных.");
@@ -20,7 +20,7 @@ function getRandomArbitrary(min = minNumber, max = maxNumber) {
 
 function checkProbabilityTheory(count = 1) {
     if (typeof count !== 'number') {
-        count = Number(count);
+        count = Number.parseInt(count);
     }
     if (isNaN(count) || count <= 0) {
         throw new Error("Error: Ошибка входных данных.");

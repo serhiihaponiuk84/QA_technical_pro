@@ -9,7 +9,7 @@ function pad(str = "", symbol  = " ", count  = 0, start = true) {
         throw new Error("Error: символ должен быть одиночным.");
     }
     if (typeof count !== 'number') {
-        count = Number(count);
+        count = Number.parseInt(count);
     }
     if (isNaN(count)) {
         throw new Error("Error: Ошибка входных данных.");
@@ -36,6 +36,7 @@ try {
     new_str = pad(undefined, "*", 10, 1); // **********
     new_str = pad("google", undefined, "7", 1); // " google"
     new_str = pad("google", "+", 7, "text"); // +google
+    new_str = pad("google", "+", 7.4, "text");
     // new_str = pad("google", "+", "text", 1); // Error: Ошибка входных данных.
     console.log(new_str)
 } catch (e) {
