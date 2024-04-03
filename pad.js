@@ -5,6 +5,9 @@ function pad(str = "", symbol  = " ", count  = 0, start = true) {
     if (typeof symbol !== 'string') {
         symbol = String(symbol);
     }
+    if (symbol.length !== 1) {
+        throw new Error("Error: символ должен быть одиночным.");
+    }
     if (typeof count !== 'number') {
         count = Number(count);
     }
@@ -13,9 +16,6 @@ function pad(str = "", symbol  = " ", count  = 0, start = true) {
     }
     if (typeof start !== 'boolean') {
         start = Boolean(start);
-    }
-    if (symbol.length !== 1) {
-        throw new Error("Error: символ должен быть одиночным.");
     }
     if (str.length >= count) {
         return str;
