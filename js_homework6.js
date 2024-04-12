@@ -40,10 +40,10 @@ function generateRandomArray(numElements, minValue, maxValue) {
     return arr;
 }
 
-const numberOfelements = 10;
+const numElements = 10;
 const minValue = -100;
 const maxValue = 100;
-arr = generateRandomArray(numberOfelements, minValue, maxValue);
+arr = generateRandomArray(numElements, minValue, maxValue);
 console.log(arr);
 myBlend(arr);
 console.log(arr);
