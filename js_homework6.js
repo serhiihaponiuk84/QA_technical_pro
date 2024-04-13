@@ -48,7 +48,7 @@ console.log(arr);
 myBlend(arr);
 console.log(arr);
 
-/*
+/* ДЗ 16. BigBoss
 Опис ДЗ: Уявімо собі, що ми є власниками великої компанії, яка розробляє платформу для продажу квитків.
 Окрім того, наша компанія продає рішення для організації продажу цих квитків. Таким чином, у нас будуть
 клієнти, які придбають наше програмне забезпечення (ПО). По суті, ці клієнти будуть подібні до "дочірніх
@@ -105,35 +105,37 @@ const company = {
 
 function findValueByKey(companyName) {
 
-    function collectDetails(company) {
+    function collectDetails(company, depth = 0) {
         let Info = "";
         for (const key in company) {
-            if ((key !== 'clients') && (key !== 'partners')) {
+            // if ((key !== 'clients') && (key !== 'partners')) {
+            if (typeof company[key] !== 'function' && typeof company[key] !== 'object') {
                 Info += key + ": " + company[key] + "\n";
             }
-            if (key === 'clients') {
-                for (const client of company.clients) {
-                    Info += "\n";
-                    for (const key in client) {
-                        if (key !== 'partners') {
-                            Info += key + ": " + client[key] + "\n";
-                        }
-                    }
-                }
+            if (typeof company[key] === 'object' && depth < 2) {
+                Info += '\n' + collectDetails(company[key], depth + 1);
             }
-            if (key === 'partners') {
-                for (const partner of company.partners) {
-                    Info += "\n";
-                    for (const key in partner) {
-                        if (key !== 'partners') {
-                            Info += key + ": " + partner[key] + "\n";
-                        }
-                    }
-                }
-            }
-
+            // if (key === 'clients') {
+            //     for (const client of company.clients) {
+            //         Info += "\n";
+            //         for (const key in client) {
+            //             if (key !== 'partners') {
+            //                 Info += key + ": " + client[key] + "\n";
+            //             }
+            //         }
+            //     }
+            // }
+            // if (key === 'partners') {
+            //     for (const partner of company.partners) {
+            //         Info += "\n";
+            //         for (const key in partner) {
+            //             if (key !== 'partners') {
+            //                 Info += key + ": " + partner[key] + "\n";
+            //             }
+            //         }
+            //     }
+            // }
         }
-
         return Info;
     }
 
@@ -143,20 +145,29 @@ function findValueByKey(companyName) {
         }
 
         let result = null;
-        for (const property of ['clients', 'partners']) {
-            if (company[property]) {
-                for (const SubCompany of company[property]) {
-                    result = navigateCompanyStructure(SubCompany);
-                    if (result) return result;
+        for (const key in company) {
+            if (typeof company[key] === 'object') {
+                if (Array.isArray(company[key])) {
+                    for (const SubCompany of company[key]) {
+                        result = navigateCompanyStructure(SubCompany);
+                        if (result) return result;
+                    }
                 }
             }
         }
+        // for (const property of ['clients', 'partners']) {
+        //     if (company[property]) {
+        //         for (const SubCompany of company[property]) {
+        //             result = navigateCompanyStructure(SubCompany);
+        //             if (result) return result;
+        //         }
+        //     }
+        // }
         return result;
     }
-
     return navigateCompanyStructure(company) || "Company not found.";
-
 }
 
-console.log(findValueByKey('Клієнт 1.2.3'));
+console.log(findValueByKey('Клієнт 1'));
 console.log(findValueByKey('Велика Компанія'));
+console.log(findValueByKey('Клієнт 12'));
