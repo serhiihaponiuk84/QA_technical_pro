@@ -103,7 +103,7 @@ const company = {
     ]
 };
 
-function findValueByKey(company, companyName) {
+function findValueByKey(companyName) {
 
     function collectDetails(company) {
         let Info = "";
@@ -158,5 +158,5 @@ function findValueByKey(company, companyName) {
 
 }
 
-console.log(findValueByKey(company, 'Клієнт 1.2.3'));
-console.log(findValueByKey(company, 'Велика Компанія'));
+console.log(findValueByKey('Клієнт 1.2.3'));
+console.log(findValueByKey('Велика Компанія'));
