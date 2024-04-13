@@ -139,12 +139,14 @@ function findValueByKey(companyName) {
         return Info;
     }
 
+
     function navigateCompanyStructure(company) {
         if (company.name === companyName) {
             return collectDetails(company);
         }
 
         let result = null;
+
         for (const key in company) {
             if (typeof company[key] === 'object') {
                 if (Array.isArray(company[key])) {
@@ -165,7 +167,9 @@ function findValueByKey(companyName) {
         // }
         return result;
     }
+
     return navigateCompanyStructure(company) || "Company not found.";
+
 }
 
 console.log(findValueByKey('Клієнт 1'));
