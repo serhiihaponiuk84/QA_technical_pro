@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6; /* Межстрочное расстояние */
+    padding: 20px; /* Внутренние отступы */
+    margin: 0; /* Внешние отступы */
+    background-image: url('../img/background.jpeg');
+    background-size: cover; /* Растягиваем фоновое изображение на весь экран */
+    background-attachment: fixed; /* Фиксируем фоновое изображение при прокрутке */
+}
+
+header, footer {
+    background-color: darkblue;
+    color: white;
+    padding: 10px 20px; /* Внутренние отступы */
+    text-align: center; /* Центрирование текста */
+}
+
+nav ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Ссылки в одну строку */
+    margin-right: 20px; /* Отступ справа для каждого элемента списка */
+}
+
+nav ul li a { /* Ссылки */
+    color: white;
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold; /* Жирное начертание */
+    padding: 5px 10px;
+    border-radius: 5px; /* Скругляем углы */
+}
+
+nav ul li a:hover {
+    background-color: darkblue;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон для основного содержимого */
+    padding: 20px; /* Внутренние отступы */
+    margin-top: 20px; /* Отступ сверху */
+    border-radius: 8px; /* Скругление углов */
+    text-align: justify;  /* Выравнивание текста по ширине */
+    text-indent: 40px;    /* Отступ первой строки абзаца */
+}
+
+h2 {
+    color: darkblue;
+}
+
+img {
+    max-width: 100%; /* Максимальная ширина изображения 100% от его контейнера */
+    height: auto; /* Высота изображения автоматически подстраивается под ширину */
+    display: block; /* Изображение отображается как блочный элемент */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+ol, ul {
+    margin-left: 20px; /* Отступ слева */
+}
+
+footer p {
+    margin: 10px 0; /* Вертикальные отступы */
+    font-size: 0.8em; /* Меньший размер шрифта */
+}
+
+a:hover {
+    color: darkred; /* Красный цвет текста при наведении на ссылки */
+}
+
+#contents {
+    text-align: center; /* Центрирование текста */
+}
+
+.content {
+    font-weight: bold; /* Жирное начертание */
+    margin-left: 40px; /* Отступ слева */
+}
+
+.name {
+    font-family: 'Orbitron', sans-serif;
+}
